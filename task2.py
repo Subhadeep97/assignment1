@@ -6,12 +6,12 @@ from datetime import datetime
 def backup_files(source_dir, dest_dir):
     # Check if source directory exists
     if not os.path.isdir(source_dir):
-        print(f"❌ Error: Source directory '{source_dir}' does not exist.")
+        print(f" Error: Source directory '{source_dir}' does not exist.")
         return
 
     # Check if destination directory exists
     if not os.path.isdir(dest_dir):
-        print(f"❌ Error: Destination directory '{dest_dir}' does not exist.")
+        print(f" Error: Destination directory '{dest_dir}' does not exist.")
         return
 
     # Iterate through all files in the source directory
@@ -31,9 +31,9 @@ def backup_files(source_dir, dest_dir):
 
             try:
                 shutil.copy2(src_file, dest_file)
-                print(f"✅ Copied: {filename} → {dest_file}")
+                print(f" Copied: {filename} → {dest_file}")
             except Exception as e:
-                print(f"❌ Failed to copy '{filename}': {e}")
+                print(f" Failed to copy '{filename}': {e}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
